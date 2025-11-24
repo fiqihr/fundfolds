@@ -1,13 +1,7 @@
 // src/components/MobileOnly.jsx
 import React, { useEffect, useState } from "react";
 
-/**
- * MobileOnly
- * - Inisialisasi state dilakukan pada useState supaya tidak memanggil setState sinkron di dalam effect.
- * - useEffect hanya memasang listener untuk perubahan matchMedia.
- */
 export default function MobileOnly({ children, breakpoint = 640 }) {
-  // Inisialisasi state dari matchMedia — aman untuk client-only
   const getInitialIsMobile = () => {
     if (typeof window === "undefined") return false;
 
@@ -26,15 +20,12 @@ export default function MobileOnly({ children, breakpoint = 640 }) {
     const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
     const handler = (e) => {
-      // e is MediaQueryListEvent on change. Use e.matches safely.
       setIsMobile(!!e.matches);
     };
 
-    // attach listener (support old & new APIs)
     if (mq.addEventListener) mq.addEventListener("change", handler);
     else mq.addListener(handler);
 
-    // cleanup
     return () => {
       if (mq.removeEventListener) mq.removeEventListener("change", handler);
       else mq.removeListener(handler);

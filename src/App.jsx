@@ -1,18 +1,57 @@
 // src/App.jsx
-import React, { useState } from "react";
+import React from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import MobileOnly from "./components/MobileOnly";
 import Dashboard from "./pages/Dashboard";
 import BottomBar from "./components/BottomBar";
+import Pocket from "./pages/Pocket";
+import BudgetMethod from "./pages/BudgetMethod";
+import DetailPocket from "./pages/DetailPocket";
+
+const routesMapping = {
+  dashboard: { path: "/", element: <Dashboard /> },
+  ringkasan: {
+    path: "/ringkasan",
+    element: <div className="p-4">Halaman Ringkasan</div>,
+  },
+  profile: {
+    path: "/profile",
+    element: <div className="p-4">Halaman Profile</div>,
+  },
+  pocket: {
+    path: "/pocket",
+    element: <Pocket />,
+  },
+  detail_pocket: {
+    path: "/detail_pocket",
+    element: <DetailPocket />,
+  },
+  budget_method: {
+    path: "/budget_method",
+    element: <BudgetMethod />,
+  },
+};
 
 export default function App() {
-  const [tab, setTab] = useState("dashboard");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentPath = location.pathname.replace("/", "") || "dashboard";
+
   return (
     <MobileOnly>
       <div className="pb-20 font-inter">
-        {tab === "dashboard" && <Dashboard />}
-        {tab === "ringkasan" && <div className="p-4">Halaman Ringkasan</div>}
-        {tab === "profile" && <div className="p-4">Halaman Profile</div>}
-        <BottomBar active={tab} onChange={setTab} />
+        <Routes>
+          {Object.entries(routesMapping).map(([key, value]) => (
+            <Route key={key} path={value.path} element={value.element} />
+          ))}
+          ;
+        </Routes>
+
+        <BottomBar
+          active={currentPath}
+          onChange={(p) => navigate(routesMapping[p].path)}
+        />
       </div>
     </MobileOnly>
   );
