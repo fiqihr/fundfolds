@@ -7,8 +7,11 @@ export default {
         primary: {
           50: "#f5fbff",
           100: "#e6f5ff",
-          500: "#0ea5a4", // contoh primary — nanti sesuaikan
+          500: "#0ea5a4",
         },
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
