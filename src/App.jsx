@@ -7,6 +7,7 @@ import BottomBar from "./components/BottomBar";
 import Pocket from "./pages/Pocket";
 import BudgetMethod from "./pages/BudgetMethod";
 import DetailPocket from "./pages/DetailPocket";
+import SubDetailPocket from "./pages/SubDetailPocket";
 
 const routesMapping = {
   dashboard: { path: "/", element: <Dashboard /> },
@@ -29,6 +30,10 @@ const routesMapping = {
   budget_method: {
     path: "/budget_method",
     element: <BudgetMethod />,
+  },
+  sub_detail_1: {
+    path: "/sub_detail_1",
+    element: <SubDetailPocket />,
   },
 };
 
