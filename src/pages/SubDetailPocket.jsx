@@ -1,3 +1,5 @@
+import { Plus } from "lucide-react";
+
 export default function SubDetailPocket() {
   return (
     <div className="p-6">
@@ -19,22 +21,117 @@ export default function SubDetailPocket() {
         </div>
       </div>
       <hr className="my-4" />
-      {/* disini diganti tabel saja besok */}
-      <div className="bg-white p-4 rounded-xl shadow-md">
-        <div className="flex">
-          <div className="w-1/3 text-sm flex flex-col items-start">
-            <span className="bg-slate-600 text-white p-1 rounded text-xs">
-              Selasa
-            </span>
-            <span className="text-xs mt-1">25/11/2025</span>
-          </div>
-          <div className="w-1/3 text-sm  font-semibold flex items-end">
-            <p>Pemasukkan</p>
-          </div>
-          <div className="w-1/3 text-sm  font-semibold flex items-end">
-            <p>Pengeluaran</p>
-          </div>
-        </div>
+      <button className="bg-primary-500 w-full rounded-xl p-2 text-white text-sm mb-4 shadow-md font-bold flex justify-center items-center gap-1">
+        <Plus />
+        Tambah
+      </button>
+      <div className="bg-slate-200 p-2 rounded-lg mb-2">
+        <table className="w-full">
+          <thead>
+            <tr>
+              <th className="text-left px-2 w-1/3 text-sm">Tanggal</th>
+              <th className="text-left px-2 w-1/3 text-sm">Pemasukkan</th>
+              <th className="text-left px-2 w-1/3 text-sm">Pengeluaran</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div className="bg-white p-2 rounded-xl shadow-md mb-2">
+        <table className="w-full">
+          <tbody>
+            <tr>
+              <td className="text-left px-2 w-1/3 text-sm">
+                <span className="bg-slate-400 text-white px-1 rounded-sm">
+                  Rabu
+                </span>
+                <p className="text-xs">26/11/2025</p>
+              </td>
+              <td className="text-left px-2 w-1/3 text-sm text-emerald-500 font-bold">
+                Rp. 0
+              </td>
+              <td className="text-left px-2 w-1/3 text-sm text-rose-500 font-bold">
+                Rp. 35.000
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={3}>
+                <hr className="my-1" />
+              </td>
+            </tr>
+            <tr>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm">Makan Siang</td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-emerald-500">
+                Rp. 0
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-rose-500">
+                Rp. 15.000
+              </td>
+            </tr>
+            <tr>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm">Makan Malam</td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-emerald-500">
+                Rp. 0
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-rose-500">
+                Rp. 20.000
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="bg-white p-2 rounded-xl shadow-md mb-2">
+        <table className="w-full">
+          <tbody>
+            <tr>
+              <td className="text-left px-2 w-1/3 text-sm">
+                <span className="bg-slate-400 text-white px-1 rounded-sm">
+                  Selasa
+                </span>
+                <p className="text-xs">25/11/2025</p>
+              </td>
+              <td className="text-left px-2 w-1/3 text-sm text-emerald-500 font-bold">
+                Rp. 250.000
+              </td>
+              <td className="text-left px-2 w-1/3 text-sm text-rose-500 font-bold">
+                Rp. 40.000
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={3}>
+                <hr className="my-1" />
+              </td>
+            </tr>
+            <tr>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm">
+                Maxwin Anjay
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-emerald-500">
+                Rp. 250.000
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-rose-500">
+                Rp. 0
+              </td>
+            </tr>
+            <tr>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm">Makan Siang</td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-emerald-500">
+                Rp. 0
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-rose-500">
+                Rp. 20.000
+              </td>
+            </tr>
+            <tr>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm">Makan Malam</td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-emerald-500">
+                Rp. 0
+              </td>
+              <td className="pb-1 text-left px-2 w-1/3 text-sm text-rose-500">
+                Rp. 20.000
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
